@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="./main.js" defer></script>
-  <link rel="stylesheet" href="./output.css" />
-  <title>Document</title>
+  <title>Api</title>
+  <script src="Juaquin.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-pink-400">
+
+  <div id="hero-container" class="relative w-full h-screen overflow-hidden z-10 transition-all duration-500">
+    <img id="hero-bg" src="./rick-and-morty-en-nave-4518.webp" alt="Imagen de fondo"
+      class="absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-300" />
+
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-10">
+      <h1 id="hero-title"
+        class="text-white text-center text-outline-white text-4xl md:text-6xl font-extrabold tracking-widesttransition-transform duration-300">
+        API Rick and Morty<br>
+        by Grupo Ricardo
+      </h1>
+    </div>
+  </div>
+
+  <div class="relative z-0 bg-white p-4" id="importante" style="position: relative; z-index: 0;
+  background: white; padding: 20px;">
+    <div class="flex justify-between mb-4">
+      <button id="prevBtn" class="bg-violet-500 px-4 py-2 rounded hover:bg-blue-500 disabled:opacity-50" disabled>←
+        Anterior</button>
+      <button id="nextBtn" class="bg-violet-500 px-4 py-2 rounded hover:bg-blue-500">Siguiente →</button>
+    </div>
+    <div id="characterContainer" class="grid grid-cols-5 grid-rows-2 gap-4">
+    </div>
+    <!-- Ana -->
+  </div>
 
 </body>
 
