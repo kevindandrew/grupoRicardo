@@ -21,25 +21,21 @@ traerDatos(url);
  
 // eventos de scroll
  
- window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const maxScroll = 300;
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const maxScroll = 300;
 
-      const title = document.getElementById('hero-title');
-      const background = document.getElementById('hero-bg');
-      const heroContainer = document.getElementById('hero-container');
+  const title = document.getElementById('hero-title');
+  const background = document.getElementById('hero-bg');
+  const heroContainer = document.getElementById('hero-container');
 
-      const opacityTitle = Math.max(1 - scrollY / maxScroll, 0);
-      const scaleTitle = 1 + scrollY / 500;
-      title.style.opacity = opacityTitle;
-      title.style.transform = `scale(${scaleTitle})`;
+  const opacityTitle = Math.max(1 - scrollY / maxScroll, 0);
+  const scaleTitle = 1 + scrollY / 500;
+  title.style.opacity = opacityTitle.toFixed(2);
+  title.style.transform = `scale(${scaleTitle.toFixed(3)})`;
 
-      const opacityBg = Math.max(1 - scrollY / (maxScroll * 0.8), 0);
-      background.style.opacity = opacityBg;
+  const opacityBg = Math.max(1 - scrollY / (maxScroll * 0.8), 0);
+  background.style.opacity = opacityBg.toFixed(2);
 
-      if (scrollY > maxScroll) {
-        heroContainer.style.zIndex = '0';
-      } else {
-        heroContainer.style.zIndex = '10';
-      }
-    });
+  heroContainer.style.zIndex = scrollY > maxScroll ? '0' : '10';
+});
